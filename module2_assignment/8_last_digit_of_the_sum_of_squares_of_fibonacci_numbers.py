@@ -2,14 +2,33 @@ def last_digit_of_the_sum_of_squares_of_fibonacci_numbers(n):
 	if n == 0:
 		return 0
 
-	res = [0, 1]
-	final_sum = 1
+	mod = 10
+	start = 0
+	end = 1
+	sum = 1
+	find_loop = False
 	for i in range(2, n + 1):
-		next_num = sum(res)
-		res = [res[1], next_num]
-		final_sum += 2 ** next_num
+		start, end = end, (start + end) % mod
+		sum += end ** 2 % mod
+		if start == 0 and end == 1:
+			find_loop = True
+			sum -= 1
+			break
 
-	return final_sum % 10
+	sum = sum % mod
+
+	if find_loop is True:
+		new_n = n % (i - 1)
+		sum = (sum * (n // (i - 1))) % mod
+		if new_n == 0:
+			return sum % mod
+
+		sum += 1
+		for i in range(2, new_n + 1):
+			start, end = end, start % mod + end % mod
+			sum += end ** 2 % mod
+
+	return sum % mod
 
 
 if __name__ == '__main__':

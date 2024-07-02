@@ -1,8 +1,9 @@
-def fibonacci_again(n, mod):
+# Main idea: catch the loop where fibonacci last digit number restart as beginning
+
+def _catch_the_end_of_the_loop(n, mod):
 	if n == 0:
 		return 0
 
-	# catch the loop where fibonacci last digit number restart as beginning
 	start = 0
 	end = 1
 	find_loop = False
@@ -12,6 +13,11 @@ def fibonacci_again(n, mod):
 			find_loop = True
 			break
 
+	return start, end, i, find_loop
+
+
+def fibonacci_again(n, mod):
+	start, end, i, find_loop = _catch_the_end_of_the_loop(n, mod)
 	if find_loop is True:
 		new_n = n % (i - 1)
 		if new_n == 0:
