@@ -2,7 +2,7 @@ def LOM(a, b):
 	numbers = sorted([a, b])
 	lower = numbers[0]
 	upper = numbers[1]
-	for i in range(1, lower):
+	for i in range(1, lower + 1):
 		tmp_res = upper*i
 		if tmp_res % lower == 0:
 			return tmp_res
