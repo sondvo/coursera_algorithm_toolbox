@@ -7,5 +7,5 @@ https://alexanderskulikov.github.io/files/toolbox_statements.pdf?utm_source=cour
 
 ----
 
-### updated when starting module 5:
-for the newbies to algorithm like me, it's better to watch video carefully then try to implement the algorithm instructors provided, instead of do it yourself (but it is also good if you can do it your own way).
+### Updates when solving module 5:
+For the newbies to algorithm like me, it's better to watch video carefully then try to implement the algorithm instructors provided, instead of do it yourself (but it is also good if you can doing it your own way).
